@@ -1,0 +1,17 @@
+assets_host: 'http://localhost:3000'
+app_domain: 'http://localhost:4200'
+
+production:
+  app_domain: 'app_domain'
+  secret_key_base: 'secret_key'
+  assets_host: ''
+
+  aws_bucket: 'bucket'
+  aws_access_key_id: 'access_key_id'
+  aws_secret_access_key: 'secret_access_key'
+  aws_s3_path: ':class/:id/:attachment/:basename_:style.:extension'
+
+  mandrill_username: 'username'
+  mandrill_apikey: 'apikey'
+  mandrill_host: 'host'
+  mandrill_port: 'port'

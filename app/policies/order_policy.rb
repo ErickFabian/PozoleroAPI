@@ -5,6 +5,7 @@ class OrderPolicy < ApplicationPolicy
       :client_id,
       :note,
       :total,
+      :type,
       order_items_attributes: [
         :id,
         :quantity,

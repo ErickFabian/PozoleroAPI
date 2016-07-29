@@ -1,9 +1,13 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :update]
+  before_action :set_order, only: [:show, :update, :destroy]
 
   def index
     @orders = Order.all
     render json: @orders
+  end
+
+  def show
+    render json: @order
   end
 
   def create
@@ -21,6 +25,11 @@ class OrdersController < ApplicationController
     else
       render json: { errors: @order.errors } , status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @order.destroy
+    render json: {}
   end
 
   private

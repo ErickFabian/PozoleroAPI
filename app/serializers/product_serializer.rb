@@ -6,8 +6,6 @@ class ProductSerializer < ActiveModel::Serializer
               :description
 
   def image_url
-    puts "here"
-    puts ENV
     if object.image.present?
       ENV['assets_host'] + object.image.url.to_s
     end

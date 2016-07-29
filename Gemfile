@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
-gem 'rails', github: "rails/rails"
-gem 'devise', git: "https://github.com/plataformatec/devise.git"
+gem 'rails','5.0.0'
+gem 'devise', '4.2.0'
 gem 'pg', '0.18.4'
 gem 'puma', '~> 3.0'
 gem 'rack-cors', '0.4.0'
-gem 'tiddle', git: 'https://github.com/adamniedzielski/tiddle.git'
+gem 'tiddle', '0.7.0'
 gem 'pundit', '1.1.0'
-gem 'active_model_serializers', '0.10.0.rc5'
-gem "paperclip", "~> 5.0.0.beta2"
+gem 'active_model_serializers', '0.10.2'
+gem "paperclip", '5.0.0'
 gem "figaro", '1.1.1'
 gem 'simple_enum', '2.3.0'
 

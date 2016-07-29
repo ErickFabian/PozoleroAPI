@@ -8,7 +8,6 @@ class Order < ApplicationRecord
   ], map: :string
 
   validates :client,
-            :note,
             :total, presence: true
 
   accepts_nested_attributes_for :order_items, allow_destroy: true

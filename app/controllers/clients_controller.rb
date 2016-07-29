@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :set_client, only: [:show]
+  before_action :set_client, only: [:show, :update, :destroy]
 
   def index
     @clients = Client.all
@@ -17,6 +17,19 @@ class ClientsController < ApplicationController
     else
       render json: { errors: @client.errors }, status: :unprocessable_entity
     end
+  end
+
+  def update
+    if @client.update(client_params)
+      render json: @client
+    else
+      render json: { errors: @client.errors }, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @client.destroy
+    render json: {}
   end
 
   private

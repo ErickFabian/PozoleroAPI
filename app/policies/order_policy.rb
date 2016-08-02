@@ -6,6 +6,7 @@ class OrderPolicy < ApplicationPolicy
       :note,
       :total,
       :type,
+      :status,
       order_items_attributes: [
         :id,
         :quantity,

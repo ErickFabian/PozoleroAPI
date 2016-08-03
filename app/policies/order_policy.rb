@@ -16,4 +16,8 @@ class OrderPolicy < ApplicationPolicy
       ]
     ]
   end
+
+  def query_params(params)
+    (params[:q] || {})
+  end
 end

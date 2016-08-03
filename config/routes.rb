@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  apipie
   defaults format: 'json' do
     devise_for :users, defaults: { format: :json }, controllers: {
       sessions: 'sessions',

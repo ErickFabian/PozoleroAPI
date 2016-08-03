@@ -1,8 +1,11 @@
 class OrdersController < ApplicationController
+  include OrdersDoc
   before_action :set_order, only: [:show, :update, :destroy]
 
   def index
-    @orders = Order.all
+    @orders = Order.ransack(query_params(Order)).
+      result(distinct: true)
+
     render json: @orders
   end
 
@@ -11,7 +14,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.new(permitted_attributes(Order))
     if @order.save
       render json: @order, status: :created
     else
@@ -20,7 +23,7 @@ class OrdersController < ApplicationController
   end
 
   def update
-    if @order.update(order_params)
+    if @order.update(permitted_attributes(@order))
       render json: @order
     else
       render json: { errors: @order.errors } , status: :unprocessable_entity
@@ -36,10 +39,5 @@ class OrdersController < ApplicationController
 
   def set_order
     @order = Order.find(params[:id])
-  end
-
-  def order_params
-    params.require(:order).permit(
-      *policy(@order || Order).permitted_attributes)
   end
 end

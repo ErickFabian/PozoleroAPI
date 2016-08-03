@@ -1,4 +1,6 @@
 class ClientsController < ApplicationController
+  include ClientsDoc
+
   before_action :set_client, only: [:show, :update, :destroy]
 
   def index

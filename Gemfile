@@ -11,6 +11,8 @@ gem 'active_model_serializers', '0.10.2'
 gem "paperclip", '5.0.0'
 gem "figaro", '1.1.1'
 gem 'simple_enum', '2.3.0'
+gem 'ransack', '1.8.1'
+gem 'apipie-rails', '0.3.6'
 
 group :development, :test do
   gem 'capistrano-rails'

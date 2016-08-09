@@ -12,4 +12,8 @@ class Order < ApplicationRecord
             :total, presence: true
 
   accepts_nested_attributes_for :order_items, allow_destroy: true
+
+  ransacker :created_at do
+    Arel.sql("date(orders.created_at)")
+  end
 end

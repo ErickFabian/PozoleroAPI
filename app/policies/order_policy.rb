@@ -18,6 +18,8 @@ class OrderPolicy < ApplicationPolicy
   end
 
   def query_params(params)
-    (params[:q] || {})
+    (params[:q] || {}).dup.tap do |search|
+      search[:created_at_eq] = Date.today.to_s if search[:created_at_eq].empty?
+    end
   end
 end

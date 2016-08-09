@@ -13,6 +13,8 @@ gem "figaro", '1.1.1'
 gem 'simple_enum', '2.3.0'
 gem 'ransack', '1.8.1'
 gem 'apipie-rails', '0.3.6'
+gem 'will_paginate', '3.1.0'
+gem 'api-pagination', '4.1.1'
 
 group :development, :test do
   gem 'capistrano-rails'

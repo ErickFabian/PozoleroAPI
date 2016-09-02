@@ -6,8 +6,7 @@ class OrdersController < ApplicationController
     @orders = Order.ransack(query_params(Order)).
       result(distinct: true)
 
-    puts "query_params: #{query_params(Order)}"
-    paginate json: @orders
+    paginate @orders
   end
 
   def show

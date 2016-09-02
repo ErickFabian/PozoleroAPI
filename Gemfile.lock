@@ -44,7 +44,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    api-pagination (4.1.1)
     apipie-rails (0.3.6)
       json
     arel (7.1.1)
@@ -195,7 +194,6 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers (= 0.10.2)
-  api-pagination (= 4.1.1)
   apipie-rails (= 0.3.6)
   byebug
   capistrano-rails
